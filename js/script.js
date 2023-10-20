@@ -91,7 +91,7 @@ const nav = document.querySelector(".nav"),
 
 
 var typed = new Typed(".typing",{
-    strings:["","Software Engineer","Ment","Hardware Engineer"],
+    strings:["","Software Engineer","Mentor","Hardware Engineer"],
     typeSpeed:80,
     BackSpeed:50,
     loop:true
