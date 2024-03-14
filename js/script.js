@@ -62,6 +62,22 @@ const nav = document.querySelector(".nav"),
               }
           }
       }
+      document.querySelectorAll('.image-link').forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          var src = e.target.src || e.target.querySelector('img').src;
+          document.querySelector('.popup-image').src = src;
+          document.querySelector('.image-popup').style.display = 'block';
+        });
+      });
+
+      document.querySelector('.image-popup').addEventListener('click', function() {
+        document.querySelector('.image-popup').style.display = 'none';
+      });
+    
+      document.querySelector('.popup-image').addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
       document.querySelector(".hire-me").addEventListener("click", function()
       {
           const sectionIndex = this.getAttribute("data-section-index");
@@ -91,7 +107,7 @@ const nav = document.querySelector(".nav"),
 
 
 var typed = new Typed(".typing",{
-    strings:["","Software Engineer","Mentor","Hardware Engineer"],
+    strings:["","Software Engineer","Mentor","Web Developer", "Game Designer"],
     typeSpeed:80,
     BackSpeed:50,
     loop:true
